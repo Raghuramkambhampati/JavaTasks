@@ -24,6 +24,7 @@ public class ArrTask {
 		   }
 	  }
 	  System.out.println("Printing them in reverse order"); 
+	  System.out.println("Printing them in reverse order"); 
 	  for(i=n-1;i>=0;i--)
 		  System.out.print(a[i]+" ");
 	}
