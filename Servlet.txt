@@ -1,0 +1,65 @@
+Servlet: Serevlet is a java Program which runs on the server and used to perform a specific task.
+Server: A server is a machine that contains any service. Services may be like Web Service,Application Logic , File transfer ,Mail Transfer, Database Operation.
+Types Of Server:
+1)WebServer: It has a web Container which can accomodate any Web Technology like html files,Css Files,Java Script Files,Servlets.....etc
+Example: Apache Tomcat.
+2)Application Server: An application Server is a machine which consists of both Web Container and Application Container.
+Examples: WebSphere,WebLogic,Jboss,Jrun...etc
+3)Database Server
+4)Mail Server
+5)Proxy Server
+.....etc
+
+
+
+Servlet Java API
+java Consists of some predefined classes and Interfaces for servlets
+1) javax.servlet.Servlet--Interface
+2) javax.servlet.ServletRequest--Interface
+3) javax.servlet.ServletResponse--Interface
+4) javax.servlet.RequestDispatcher--Class
+5) javax.servlet.Filter--Class
+6) javax.servlet.GenericServlet--Abstract Class
+7) javax.servlet.Http.HttpServlet--Interface
+8) javax.servlet.Http.HttpServletRequest--Interface
+9) javax.servlet.Http.HttpservletResponse--Interface
+
+
+Methods in Servlet Interface.
+In Servlet Interface there are 2 types of methods 1)LifeCycleMethods and 2)NonLifeCycleMethods
+
+LifeCycleMethods: These are the methods which are automatically called by the Server implicitly in which the servlet is deployed.
+NonLifeCycleMethods: These are the methods which are called by the explicitly.
+
+
+LifeCycleMethods:
+1)init:
+public void init()
+This method is called by the server when servlet is called within the url.
+All the code which should run only once like dataBase connections were written in this method.
+2)Service:
+public void service(ServletRequest req,ServletResponce res)
+In this method we will be writing the actual code or service of the servlet.
+3)Destroy:
+public void destroy()
+This method contains the code for destroying the servlet.
+
+
+NonLifeCycleMethods:
+1)getServletInfo:
+public String getSevletInfo(): this method return the information about the servlet.
+2)getServletConfig:
+public servletConfig getServletConfig(): this method returns the present coinfiguration of the servlet.
+
+
+If we are writing a servlet using servlet Interface we should overload all methods. To overcome this problem java has introduced genric servlet.
+GenricServlet overrides all the methods in the servlet class except the service methods.
+Considering the security issues,like raw data on the url , Post method is safe to write a servlet. so we should use extend HttpServlet Class to write a servlet and we can overload doGet() and doPost()  methods. 
+
+DeploymentdescriptorFile:
+This file consists of about all the configuration.
+<servlet></servlet> this xml tag links the name of the servlet along with the Fully qualified servlet class path.
+<servlet-mapping></servlet-mapping> this mapping links the servlet name with the url pattern for which the servlet is invoked.
+
+
+
