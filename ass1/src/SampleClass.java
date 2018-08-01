@@ -33,4 +33,9 @@ int a=10;
   {
       System.out.println("finalize method called");
   }
+  
+  public void supermethod()
+  {
+	  System.out.println("This is super class");
+  }
 }
